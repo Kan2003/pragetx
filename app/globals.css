@@ -79,4 +79,15 @@ body {
 }
 
 
+@media (max-width: 950px) {
+  .stripe-row {
+    width: 500px;
+  }
+}
+@media (max-width: 500px) {
+  .stripe-row {
+    width: 350px;
+  }
+  
+}
 

@@ -37,16 +37,15 @@ export function FlipBox({ boxIndex, pngList, startIndex }: FlipBoxProps) {
   }, [boxIndex, pngList.length]);
 
   return (
-    <div className="border border-[#362baa] w-10 h-10 rounded-md overflow-hidden flex items-center justify-center">
+    <div className="border border-[#362baa] w-10 h-10 max-[600px]:w-7 max-[600px]:h-7 rounded-md overflow-hidden flex items-center justify-center flip-box">
       <div
         style={{
-          width: 40,
-          height: 40,
           borderRadius: 4,
           transform: flipping ? "scaleY(0)" : "scaleY(1)",
           transition: `transform ${FLIP_MS}ms ease-in-out`,
           transformOrigin: "center",
-        }}
+        }}  
+        className="flexBox-img w-full h-full flex items-center justify-center"
       >
         {pngList[currentIndex]}
       </div>

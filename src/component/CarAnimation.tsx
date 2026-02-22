@@ -29,10 +29,10 @@ export default function CarAnimation() {
           <Image
             src={frames[frameIndex]}
             alt="moving car"
-            width={450}
+            width={300}
             height={160}
             priority
-            className="car-sprite w-auto h-auto"
+            className="car-sprite"
           />
         </div>
       </div>

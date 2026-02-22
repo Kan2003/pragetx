@@ -256,7 +256,7 @@ const PAUSE_AFTER = 3000;
           opacity: 0.4,
         }}
       />
-      <div className="flex items-center w-38 h-96.5 mt-10">
+      <div className="hidden min-[950px]:flex items-center w-38 h-96.5 mt-10">
         <div className="w-38 h-26.25 z-10 bg-[#122054] rounded-md gap-2 p-2 grid grid-cols-3 grid-rows-2 overflow-hidden">
           {png.map((_, index) => (
             <FlipBox
@@ -268,8 +268,8 @@ const PAUSE_AFTER = 3000;
           ))}
         </div>
       </div>
-      <div className="flex w-150 flex-col items-center  pt-10 relative">
-        <div className="w-130 rounded-lg h-12  bg-[#122054] p-2 flex gap-2.5 relative items-center justify-center">
+      <div className="flex w-150 flex-col items-center  pt-10 relative wrap-break-word">
+        <div className=" rounded-lg h-12  bg-[#122054] p-2 flex gap-2.5 relative items-center justify-center">
           {topname.map((item, index) => (
             <Box key={index} animation={true} text={item} bgColor="#2C2484" visible={visibleSet.has(index)}
  />
@@ -297,10 +297,10 @@ const PAUSE_AFTER = 3000;
         </svg>
 
         <div className="absolute left-0 top-[20%] w-full flex items-center justify-between">
-          <div className="w-[50%] flex justify-center mr-3">
+          <div className="w-[50%] max-[500px]:w-[30%] flex justify-center mr-3">
             <Box text="SDK" bgColor="#533AFD" />
           </div>
-          <div className="w-[50%] flex justify-center">
+          <div className="w-[50%] max-[500px]:w-[40%] flex justify-center">
             <Box text="Event Destinations" bgColor="#533AFD" />
           </div>
         </div>
@@ -318,7 +318,7 @@ const PAUSE_AFTER = 3000;
         <div className="w-full absolute top-[34%] z-1">
           <div className="">
             <svg
-              className="items-center"
+              className="items-center stripe-row"
               width="740"
               height="20"
               aria-hidden="true"
@@ -336,7 +336,19 @@ const PAUSE_AFTER = 3000;
               />
             </svg>
           </div>
-          <div className="absolute -top-2 left-10">
+          <div className="flex min-[950px]:hidden items-center w-38 -mt-10">
+        <div className="z-10 bg-[#122054] rounded-md gap-2 p-2 grid grid-cols-3 grid-rows-2 overflow-hidden">
+          {png.map((_, index) => (
+            <FlipBox
+              key={index}
+              boxIndex={FLIP_ORDER.indexOf(index)}
+              pngList={png}
+              startIndex={index * 2}
+            />
+          ))}
+        </div>
+      </div>
+          <div className="absolute -top-2 left-10 hidden min-[950px]:block">
             <Box
               text="App Marketplace"
               bgColor="#533AFD"
@@ -357,7 +369,7 @@ const PAUSE_AFTER = 3000;
         </div>
         <ConnectionAnimation/>
       </div>
-      <div className="flex items-center w-38 h-96.5 mt-10 justify-end">
+      <div className="hidden min-[950px]:flex items-center w-38 h-96.5 mt-10 justify-end">
         <div className="w-10 h-10 z-10 rounded-md">
           <div
             style={{

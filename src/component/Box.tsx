@@ -12,7 +12,7 @@ const Box = ({ text, bgColor, icon, visible , animation = false }: BoxProps) => 
   return (
     <div className="border border-[#362baa] w-fit h-8 rounded-md overflow-hidden z-10">
       <div
-        className="px-3 w-full h-full flex items-center justify-center text-white text-sm"
+        className="px-3 max-[650px]:px-1 w-full h-full flex items-center justify-center text-white text-sm max-[450px]-text-xs"
         style={{
           backgroundColor: bgColor,
           ...(animation ? {
