@@ -1,0 +1,134 @@
+.road-container {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #444;
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .road-container {
+    height: 180px;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .road-container {
+    height: 220px;
+    margin-top: 2rem;
+  }
+}
+
+.road {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #555 0%, #333 100%);
+}
+
+.road-stripes {
+  position: absolute;
+  bottom: 40px;
+  width: 300%;
+  height: 8px;
+  background: repeating-linear-gradient(
+    90deg,
+    #fff 0,
+    #fff 40px,
+    transparent 40px,
+    transparent 80px
+  );
+  animation: move-stripes 3s linear infinite;
+}
+
+@media (min-width: 640px) {
+  .road-stripes {
+    bottom: 35px;
+    height: 6px;
+  }
+}
+
+@media (min-width: 768px) {
+  .road-stripes {
+    bottom: 40px;
+    height: 8px;
+  }
+}
+
+.car-wrapper {
+  position: absolute;
+  bottom: 35px;
+  left: -300px;
+  width: 300px;
+  animation: drive 8s linear infinite;
+}
+
+@media (min-width: 640px) {
+  .car-wrapper {
+    bottom: 40px;
+    left: -350px;
+    width: 350px;
+  }
+}
+
+@media (min-width: 768px) {
+  .car-wrapper {
+    bottom: 50px;
+    left: -450px;
+    width: 450px;
+  }
+}
+
+.car {
+  position: relative;
+}
+
+.car-sprite {
+  display: block;
+  transform: translateZ(0); /* helps with smoother animation */
+}
+
+/* ──────────────────────────────────────── */
+
+@keyframes drive {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(100vw + 300px));
+  }
+}
+
+@media (min-width: 640px) {
+  @keyframes drive {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(100vw + 350px));
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  @keyframes drive {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(100vw + 450px));
+    }
+  }
+}
+
+@keyframes move-stripes {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.33%); /* = 1/3 because we made it 300% wide */
+  }
+}
