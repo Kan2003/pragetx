@@ -19,7 +19,7 @@ const page = () => {
   return (
     <div className={`${isDark ? 'bg-zinc-800' : 'bg-white'} w-full min-h-screen`}>
       <div className={`themeChanger py-4 sm:py-6 md:py-8 flex flex-col items-center w-full px-4 sm:px-6 md:px-8`}>
-        <button onClick={toggleTheme} className='p-2 rounded-md'>
+        <button onClick={toggleTheme} className='p-2 rounded-sm'>
           <Image 
             src={isDark ? "/dark.svg" : "/Bright.svg"} 
             alt="Toggle theme" 

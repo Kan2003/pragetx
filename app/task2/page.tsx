@@ -257,7 +257,7 @@ const PAUSE_AFTER = 3000;
         }}
       />
       <div className="hidden min-[950px]:flex items-center w-38 h-96.5 mt-10">
-        <div className="w-38 h-26.25 z-10 bg-[#122054] rounded-md gap-2 p-2 grid grid-cols-3 grid-rows-2 overflow-hidden">
+        <div className="w-38 h-26.25 z-10 bg-[#122054] rounded-sm gap-2 p-2 grid grid-cols-3 grid-rows-2 overflow-hidden">
           {png.map((_, index) => (
             <FlipBox
               key={index}
@@ -337,7 +337,7 @@ const PAUSE_AFTER = 3000;
             </svg>
           </div>
           <div className="flex min-[950px]:hidden items-center w-38 -mt-10">
-        <div className="z-10 bg-[#122054] rounded-md gap-2 p-2 grid grid-cols-3 grid-rows-2 overflow-hidden">
+        <div className="z-10 bg-[#122054] rounded-sm gap-2 p-2 grid grid-cols-3 grid-rows-2 overflow-hidden">
           {png.map((_, index) => (
             <FlipBox
               key={index}
@@ -370,7 +370,7 @@ const PAUSE_AFTER = 3000;
         <ConnectionAnimation/>
       </div>
       <div className="hidden min-[950px]:flex items-center w-38 h-96.5 mt-10 justify-end">
-        <div className="w-10 h-10 z-10 rounded-md">
+        <div className="w-10 h-10 z-10 rounded-sm">
           <div
             style={{
               width: 40,

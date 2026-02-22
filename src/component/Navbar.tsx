@@ -12,10 +12,10 @@ const Navbar = () => {
         <div className='max-w-7xl mx-auto px-2 sm:px-4 lg:px-8'>
           <div className='flex justify-center h-12 sm:h-16'>
             <div className='flex items-center space-x-2 sm:space-x-4'>
-              <Link href="/" className='text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 sm:px-3 py-2 rounded-md text-xs sm:text-sm font-bold transition duration-300'>
+              <Link href="/" className='text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 sm:px-3 py-2 rounded-sm text-xs sm:text-sm font-bold transition duration-300'>
                 Task 1
               </Link>
-              <Link href="/task2" className='text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 sm:px-3 py-2 rounded-md text-xs sm:text-sm font-bold transition duration-300'>
+              <Link href="/task2" className='text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 sm:px-3 py-2 rounded-sm text-xs sm:text-sm font-bold transition duration-300'>
                 Task 2
               </Link>
             </div>

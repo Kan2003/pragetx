@@ -103,7 +103,7 @@ export default function ConnectionAnimation() {
         {[0, 1, 2, 3].map((index) => (
           <div
             key={index}
-            className="border border-dashed border-[#362baa] w-10 h-10 rounded-md overflow-hidden flex items-center justify-center"
+            className="border border-dashed border-[#362baa] w-10 h-10 rounded-sm overflow-hidden flex items-center justify-center"
           >
             <p
               style={animDiv(
