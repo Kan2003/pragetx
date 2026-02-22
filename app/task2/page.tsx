@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 const page = () => {
   const FLIP_ORDER = [2, 0, 4, 1, 5, 3];
   const REVEAL_ORDER = [2, 4, 0, 3, 1];
-const STEP_DELAY = 500;
-const PAUSE_AFTER = 3000;
+  const STEP_DELAY = 500;
+  const PAUSE_AFTER = 3000;
   const icons = [
     // Word
     <svg
@@ -206,32 +206,40 @@ const PAUSE_AFTER = 3000;
     return () => clearInterval(interval);
   }, []);
 
-   const [visibleSet, setVisibleSet] = useState<Set<number>>(new Set());
+  const [visibleSet, setVisibleSet] = useState<Set<number>>(new Set());
 
   useEffect(() => {
     const timers: ReturnType<typeof setTimeout>[] = [];
-    const t = (fn: () => void, delay: number) => timers.push(setTimeout(fn, delay));
+    const t = (fn: () => void, delay: number) =>
+      timers.push(setTimeout(fn, delay));
 
     const runCycle = () => {
       REVEAL_ORDER.forEach((boxIndex, step) => {
-        t(() => {
-          setVisibleSet((prev) => new Set([...prev, boxIndex]));
-        }, (step + 1) * STEP_DELAY);
+        t(
+          () => {
+            setVisibleSet((prev) => new Set([...prev, boxIndex]));
+          },
+          (step + 1) * STEP_DELAY,
+        );
       });
 
       const allShownAt = (REVEAL_ORDER.length + 1) * STEP_DELAY;
 
       REVEAL_ORDER.forEach((boxIndex, step) => {
-        t(() => {
-          setVisibleSet((prev) => {
-            const next = new Set(prev);
-            next.delete(boxIndex);
-            return next;
-          });
-        }, allShownAt + PAUSE_AFTER + (step + 1) * STEP_DELAY);
+        t(
+          () => {
+            setVisibleSet((prev) => {
+              const next = new Set(prev);
+              next.delete(boxIndex);
+              return next;
+            });
+          },
+          allShownAt + PAUSE_AFTER + (step + 1) * STEP_DELAY,
+        );
       });
 
-      const allHiddenAt = allShownAt + PAUSE_AFTER + (REVEAL_ORDER.length + 1) * STEP_DELAY;
+      const allHiddenAt =
+        allShownAt + PAUSE_AFTER + (REVEAL_ORDER.length + 1) * STEP_DELAY;
       t(runCycle, allHiddenAt + 500);
     };
 
@@ -240,7 +248,6 @@ const PAUSE_AFTER = 3000;
     return () => timers.forEach(clearTimeout);
   }, []);
 
-  
   return (
     <div
       className="w-full h-[90vh] flex justify-center relative overflow-hidden"
@@ -271,8 +278,13 @@ const PAUSE_AFTER = 3000;
       <div className="flex w-150 flex-col items-center  pt-10 relative wrap-break-word">
         <div className=" rounded-lg h-12  bg-[#122054] p-2 flex gap-2.5 relative items-center justify-center">
           {topname.map((item, index) => (
-            <Box key={index} animation={true} text={item} bgColor="#2C2484" visible={visibleSet.has(index)}
- />
+            <Box
+              key={index}
+              animation={true}
+              text={item}
+              bgColor="#2C2484"
+              visible={visibleSet.has(index)}
+            />
           ))}
         </div>
         <svg
@@ -337,17 +349,17 @@ const PAUSE_AFTER = 3000;
             </svg>
           </div>
           <div className="flex min-[950px]:hidden items-center w-38 -mt-10">
-        <div className="z-10 bg-[#122054] rounded-sm gap-2 p-2 grid grid-cols-3 grid-rows-2 overflow-hidden">
-          {png.map((_, index) => (
-            <FlipBox
-              key={index}
-              boxIndex={FLIP_ORDER.indexOf(index)}
-              pngList={png}
-              startIndex={index * 2}
-            />
-          ))}
-        </div>
-      </div>
+            <div className="z-10 bg-[#122054] rounded-sm gap-2 p-2 grid grid-cols-3 grid-rows-2 overflow-hidden">
+              {png.map((_, index) => (
+                <FlipBox
+                  key={index}
+                  boxIndex={FLIP_ORDER.indexOf(index)}
+                  pngList={png}
+                  startIndex={index * 2}
+                />
+              ))}
+            </div>
+          </div>
           <div className="absolute -top-2 left-10 hidden min-[950px]:block">
             <Box
               text="App Marketplace"
@@ -367,7 +379,7 @@ const PAUSE_AFTER = 3000;
         <div>
           <Box text="Orchestration" bgColor="#533AFD" />
         </div>
-        <ConnectionAnimation/>
+        <ConnectionAnimation />
       </div>
       <div className="hidden min-[950px]:flex items-center w-38 h-96.5 mt-10 justify-end">
         <div className="w-10 h-10 z-10 rounded-sm">
