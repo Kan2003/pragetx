@@ -276,7 +276,7 @@ const page = () => {
         </div>
       </div>
       <div className="flex w-150 flex-col items-center  pt-10 relative wrap-break-word">
-        <div className=" rounded-lg h-12  bg-[#122054] p-2 flex gap-2.5 relative items-center justify-center">
+        <div className="rounded-lg max-[450px]:-mt-5 bg-[#122054] p-2 flex gap-2.5 relative items-center justify-center flex-wrap">
           {topname.map((item, index) => (
             <Box
               key={index}
@@ -309,7 +309,7 @@ const page = () => {
         </svg>
 
         <div className="absolute left-0 top-[20%] w-full flex items-center justify-between">
-          <div className="w-[50%] max-[500px]:w-[30%] flex justify-center mr-3">
+          <div className="w-[50%] max-[500px]:w-[25%] max-[600px]:w-[40%]   flex justify-center mr-3">
             <Box text="SDK" bgColor="#533AFD" />
           </div>
           <div className="w-[50%] max-[500px]:w-[40%] flex justify-center">

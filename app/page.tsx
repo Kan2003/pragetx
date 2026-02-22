@@ -16,7 +16,7 @@ const page = () => {
 
   return (
     <div
-      className={`${isDark ? "bg-zinc-800" : "bg-white"} w-full min-h-screen`}
+      className={`${isDark ? "bg-zinc-800" : "bg-white"} w-full`}
     >
       <div
         className={`themeChanger py-4 sm:py-6 md:py-8 flex flex-col items-center w-full px-4 sm:px-6 md:px-8`}
