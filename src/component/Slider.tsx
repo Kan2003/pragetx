@@ -13,7 +13,7 @@ const Slider = () => {
   ];
 
   return (
-    <div className="flex w-full max-[1000px]:h-[50vh] my-6 max-[1000px]:my-3 gap-1 sm:gap-2 px-2 sm:px-3 md:px-4">
+    <div className="flex w-full max-[1000px]:h-[50vh] h-[70vh] my-6 max-[1000px]:my-3 gap-1 sm:gap-2 px-2 sm:px-3 md:px-4">
       {images.map((src, index) => (
         <div
           key={index}
